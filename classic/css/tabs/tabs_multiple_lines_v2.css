@@ -68,7 +68,7 @@
 
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
-#TabsToolbar #alltabs-button,
+/*#TabsToolbar #alltabs-button,*/
 .tabbrowser-tab:not([fadein]){
   display: none;
 }

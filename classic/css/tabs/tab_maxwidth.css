@@ -3,8 +3,8 @@
 /****************************************************************************************/
 
 :root {
-  --tab_min_width: 50px;
-  --tab_max_width: 120px;
+  --tab_min_width: 149px;
+  --tab_max_width: 149px;
 }
 
 /* use 'about:config > browser.tabs.tabMinWidth' for tab min-width */
@@ -18,6 +18,7 @@
 /* tab max-width */
 #tabbrowser-tabs:not([overflow="true"]) .tabbrowser-tab[fadein]:not([pinned]) {
   max-width: var(--tab_max_width) !important;
+  min-width: var(--tab_min_width) !important;
   overflow: hidden !important;
 }
 

@@ -1,7 +1,8 @@
 ## Downloads for Firefox Quantum (60+)
 
-**[Releases & changelog](https://github.com/Aris-t2/CustomCSSforFx/releases)** --- **[List of CTR, CTB GMF & Noia4 CSS tweaks](https://github.com/Aris-t2/CustomCSSforFx/issues/2)**  
-**[Custom JavaScript for Firefox](https://github.com/Aris-t2/CustomJSforFx)** --- **[NoiaButtons CSS tweaks](https://github.com/Aris-t2/NoiaButtons)**  
+**[CustomCSSforFx releases & changelog](https://github.com/Aris-t2/CustomCSSforFx/releases)** --- **[Custom JavaScript for Firefox](https://github.com/Aris-t2/CustomJSforFx)** --- **[NoiaButtons CSS tweaks](https://github.com/Aris-t2/NoiaButtons)**  
+**[List of CTR, CTB, GMF & Noia4 CSS tweaks & link to FOXSCAPEuC theme by Michael Walden](https://github.com/Aris-t2/CustomCSSforFx/issues/2)**  
+
 
 ## Want to support this project?
 
@@ -9,6 +10,7 @@
 
 ## Instructions / Howto / Readme
 
+- [Unlock custom CSS usage in Firefox 69 and newer](#unlock-custom-css-usage-in-firefox-69-and-newer)
 - [WebExtensions can not modify Firefox Quantums appearance properly](#webextensions-can-not-modify-firefox-quantums-appearance-properly)  
 - [Where to find Firefox profile folder? The correct location for user styles.](#where-to-find-firefox-profile-folder-the-correct-location-for-user-styles)  
 - [How to use custom user styles?](#how-to-use-custom-user-styles)  
@@ -16,6 +18,10 @@
 - [How to modify custom user styles?](#how-to-modify-custom-user-styles)  
 - [Suggested ui tweaks](#suggested-ui-tweaks)  
 - ['about:config' tweaks](#aboutconfig-tweaks)  
+
+## Unlock custom CSS usage in Firefox 69 and newer
+
+`about:config` > `toolkit.legacyUserProfileCustomizations.stylesheets` > `true`  
 
 ## WebExtensions can not modify Firefox Quantums appearance properly
 
@@ -144,6 +150,9 @@ _Customize mode > grab and drag flexible space into palette_
 **RSS icon in location bar**  
 _Install [Awesome RSS](https://addons.mozilla.org/addon/awesome-rss/) WebExtension_  
 
+**Search within "New Tab page" (Fx69+)**  
+_browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar_  
+
 ## 'about:config' tweaks
 
 (To revert changes right-click entry and select 'reset')  
@@ -219,6 +228,9 @@ _extensions.screenshots.disabled_
 
 **Container tabs**  
 _privacy.userContext.enabled_  
+
+**Password viewer in login forms** (suggestion: disable / set to 'false')  
+_signon.showAutoCompleteFooter_
 
 **Font rendering**  
 _gfx.canvas.azure.backends_ > direct2d1.1,cairo,skia (old font rendering)  

@@ -55,6 +55,7 @@
   -moz-appearance: none !important;
   -moz-box-ordinal-group: 0 !important;
   position: fixed !important;
+  display:block !important;
   height: 22px !important;
   margin: 0 !important;
   -moz-margin-start: 1px !important;
@@ -186,13 +187,13 @@
 
 /* 'Firefox' title */
 #main-window[tabsintitlebar] #PanelUI-menu-button[label="Firefox"]::after,
-#main-window[tabsintitlebar] #PanelUI-menu-button:not([label="Nightly"]):not([label="Firefox Nightly"]):not([label="Firefox Developer Edition"]):not([label="Firefox"]):not([label="Tor-Browser"])::after {
+#main-window[tabsintitlebar] #PanelUI-menu-button:not([label="Nightly"]):not([label="Firefox Nightly"]):not([label="Firefox Developer Edition"]):not([label="Firefox"]):not([label="Tor Browser"]):not([label="Tor-Browser"])::after {
   content: "Firefox" !important;
   -moz-margin-start: -6px !important;
 }
 
 #main-window[uidensity=touch][tabsintitlebar] #PanelUI-menu-button[label="Firefox"]::after,
-#main-window[uidensity=touch][tabsintitlebar] #PanelUI-menu-button:not([label="Nightly"]):not([label="Firefox Nightly"]):not([label="Firefox Developer Edition"]):not([label="Firefox"]):not([label="Tor-Browser"])::after {
+#main-window[uidensity=touch][tabsintitlebar] #PanelUI-menu-button:not([label="Nightly"]):not([label="Firefox Nightly"]):not([label="Firefox Developer Edition"]):not([label="Firefox"]):not([label="Tor Browser"]):not([label="Tor-Browser"])::after {
   -moz-margin-start: -12px !important;
 }
 
@@ -217,11 +218,11 @@
 }
 
 /* 'Tor-Browser' title */
-#main-window[tabsintitlebar] #PanelUI-menu-button[label="Tor-Browser"]::after {
+#main-window[tabsintitlebar] #PanelUI-menu-button:-moz-any([label="Tor Browser"],[label="Tor-Browser"])::after {
   content: "Tor-Fox" !important;
   -moz-margin-start: -6px !important;
 }
-#main-window[uidensity=touch][tabsintitlebar] #PanelUI-menu-button[label="Tor-Browser"]::after {
+#main-window[uidensity=touch][tabsintitlebar] #PanelUI-menu-button:-moz-any([label="Tor Browser"],[label="Tor-Browser"])::after {
   -moz-margin-start: -12px !important;
 }
 
@@ -346,4 +347,9 @@
 /* support for tab title in Firefox titlebar option*/
 #main-window[tabsintitlebar]::after {
   -moz-margin-start: 95px !important;
+}
+
+/* remove this nonsense button, a menuitem is inside menu button anyways */
+#PanelUI-button #whats-new-menu-button {
+  display: none !important;
 }

@@ -3,6 +3,38 @@
 /****************************************************************************************/
 
 
+/* Fx70+ tweaks */
+/* recomnmended to set: about:config > security.identityblock.show_extended_validation > true */
+
+#urlbar-input-container[pageproxystate="invalid"] #tracking-protection-icon-container:not([hidden]) + #identity-box > #identity-icon {
+  margin-inline-start: 0px !important;
+}
+#tracking-protection-icon-container:not([hidden]) + #identity-box,
+#urlbar-input-container[pageproxystate=valid] > #tracking-protection-icon-container:not([hidden]) + #identity-box.notSecureText,
+#urlbar-input-container[pageproxystate=valid] > #tracking-protection-icon-container:not([hidden]) + #identity-box.verifiedIdentity,
+#urlbar-input-container[pageproxystate=valid] > #tracking-protection-icon-container:not([hidden]) + #identity-box.chromeUI,
+#urlbar-input-container[pageproxystate=valid] > #tracking-protection-icon-container:not([hidden]) + #identity-box.extensionPage {
+  padding-inline-end: 4px !important;
+}
+#urlbar-input-container:not([pageproxystate="invalid"]) > #tracking-protection-icon-container:not([hidden]):not(.chromeUI) + #identity-box {
+  padding-inline-start: 26px !important;
+  margin-inline-start: -24px !important;
+}
+#tracking-protection-icon-container:not([hidden]) {
+  padding-inline-start: 4px !important;
+  padding-inline-end: 4px !important;
+  position: relative !important;
+  border-inline-end: 0 !important;
+  background: unset !important;
+  z-index: 1000 !important;
+}
+#tracking-protection-icon-container:not([hidden]):hover {
+  background: hsla(215,54%,33%,.05)  !important;
+}
+#tracking-protection-icon-container:not([hidden]):-moz-any([open="true"],:hover:active) {
+  background: hsla(215,54%,33%,.1)  !important;
+}
+
 /* colorize identity box based on level of security */
 #urlbar[pageproxystate="valid"] .verifiedDomain {
   background: linear-gradient(hsl(215,60%,92%), hsl(215,58%,88%)) !important;

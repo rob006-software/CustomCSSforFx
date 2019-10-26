@@ -9,6 +9,9 @@
 /****************************************************************************************/
 
 
+/* NOTE  ********************************************************************************/
+/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
+
 :root {
   --tabs-end-position: 50px;
   --tab-min-height_mlt: var(--tab-min-height,32px); /* set own value here, if used without configuration files */
@@ -52,21 +55,21 @@
 }
 
 /* 'new tab' tab size */
-.tabs-newtab-button {
+:-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
   vertical-align: bottom !important;
   height: var(--mltabs-newtab-height) !important;
   margin-bottom: -1px !important;
 }
 
 @media (-moz-windows-classic) {
-	#TabsToolbar #tabbrowser-tabs .tabs-newtab-button {
+	#TabsToolbar #tabbrowser-tabs :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
 	  margin-bottom: 1px !important;
 	  height: calc(var(--mltabs-newtab-height) - 2px) !important;
 	}
 }
 
 /* hide unneeded buttons */
-.scrollbutton-up ,
+.scrollbutton-up,
 .scrollbutton-down,
 #TabsToolbar #alltabs-button{
   display: none;
@@ -93,7 +96,19 @@
   -moz-padding-end: 0px !important;
 }
 
-/* remove crap set by Firefox 58+ */
+/* hide private window indicator, window controls and titlebar placeholders */
+#main-window[tabsintitlebar] #TabsToolbar .private-browsing-indicator,
+#main-window[tabsintitlebar] #TabsToolbar #window-controls,
+#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="pre-tabs"],
+#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
+#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
+#TabsToolbar .titlebar-placeholder[type="post-tabs"] {
+  opacity: 0 !important;
+}
+
+/* hide tab borders set by Firefox 58+ to solve 'blank space below tabs' issue */
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
   border-left: unset !important;
@@ -102,14 +117,8 @@
   border: 0 !important;
 }
 
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
-#TabsToolbar .titlebar-placeholder[type="post-tabs"] {
-  opacity: 0 !important;
-}
-
-#main-window[tabsintitlebar] #TabsToolbar .private-browsing-indicator,
-#main-window[tabsintitlebar] #TabsToolbar #window-controls,
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="pre-tabs"],
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="post-tabs"] {
-  display: none !important;
+/*lw theme fix */
+#main-window:-moz-lwtheme {
+  background: var(--lwt-header-image) !important;
+  background-repeat: repeat-y !important;
 }

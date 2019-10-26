@@ -38,22 +38,39 @@
   /* for increase_ui_font_size.css */
   --general_ui_font_size: 12pt !important;
   
+  /* for searchbar_popup_engines_show_labels_scrollbars.css / ..._fx66.css*/
+  --search-one-offs_labels_height: 100px !important;
+    
   /* for ac_popup_custom_height.css (location bar popup) */
   --ac_popup_max_height: 300px !important;
+
+  /* for addonbar_move_bookmarks_toolbar_to_bottom.css */
+  --addonbar_height: 27px !important;
   
-  /* for searchbar_popup_engines_show_labels_scrollbars.css */
-  --search-one-offs_labels_height: 100px !important;
-  
-  /* for ac_popup_classic_with_two_lines_fx64.css */
-  --ac_popup_width: 700px !important; /* popup width in normal mode */
-  --ac_popup_width_maximized: 1400px !important;  /* popup width in maximized mode */
-  --ac_popup_width_fullscreen: 1400px !important;  /* popup width in fullscreen mode */
-  --ac_popup_number_of_results: 10 !important;  /* value has to be identical to about:config > browser.urlbar.maxRichResults */
-  --ac_popup_maxheight: calc(47.5px * ( var(--ac_popup_number_of_results) + 1 )) !important; /* calculate maximum height based on items to display */
-  --ac_popup_height: auto !important;  /* replace auto with 'calc(47.5px * var(--ac_popup_number_of_results))' to get a shorter scrollable list for high result numbers */
+  /* for custom_backforward_connected.css */
+  --color_disabled_state: #f9f9fa !important;
+  --color_default_state: #e8e8e8 !important;
+  --color_hover_state: lightblue !important;
+  --color_active_state: lightgrey !important;
 }
 
 :root[uidensity="touch"] {
   /* custom height for 'classic squared tabs' only */
   --classic_squared_tabs_tab_height: 36px !important;
+}
+
+/* for ac_popup_classic_with_two_lines_fx64.css and ac_popup_classic_with_two_lines_fx68.css */
+:root {
+  --ac_popup_width: 700px !important; /* popup width in normal mode */
+  --ac_popup_number_of_results: 10 !important;  /* value has to be identical to about:config > browser.urlbar.maxRichResults */
+  --ac_popup_maxheight: calc(47.5px * ( var(--ac_popup_number_of_results) + 1 )) !important; /* calculate maximum height based on items to display */
+  --ac_popup_height: auto !important;  /* replace auto with 'calc(47.5px * var(--ac_popup_number_of_results))' to get a shorter scrollable list for high result numbers */
+}
+
+:root[sizemode="maximized"] {
+  --ac_popup_width: 1400px !important; /* popup width in maximized mode */
+}
+
+:root[inFullscreen="true"] {
+  --ac_popup_width: 1400px !important; /* popup width in fullscreen mode */
 }

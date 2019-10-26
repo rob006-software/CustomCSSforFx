@@ -30,7 +30,7 @@
   min-height: var(--tab-min-height_mlt);
 }
 
-.tabs-newtab-button {
+:-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
   vertical-align: bottom !important;
   height: var(--tab-min-height_mlt);
   margin-bottom: -1px !important;
@@ -62,7 +62,7 @@
 
 #tabbrowser-tabs .arrowscrollbox-scrollbox {
   overflow-x: collapse;
-  overflow: visible; 
+  overflow: visible;
   display: block;
 }
 
@@ -83,7 +83,7 @@
 }
 
 #tabbrowser-tabs * {
-  overflow-x: none !important;
+  overflow-x: collapse !important;
 }
 
 #main-window[customizing] #tabbrowser-tabs .scrollbox-innerbox {
@@ -98,7 +98,19 @@
   -moz-padding-end: 0px !important;
 }
 
-/* remove crap set by Firefox 58+ */
+/* hide private window indicator, window controls and titlebar placeholders */
+#main-window[tabsintitlebar] #TabsToolbar .private-browsing-indicator,
+#main-window[tabsintitlebar] #TabsToolbar #window-controls,
+#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="pre-tabs"],
+#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
+#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
+#TabsToolbar .titlebar-placeholder[type="post-tabs"] {
+  opacity: 0 !important;
+}
+
+/* hide tab borders set by Firefox 58+ to solve 'blank space below tabs' issue */
 .tabbrowser-tab::after,
 .tabbrowser-tab::before {
   border-left: unset !important;
@@ -107,14 +119,19 @@
   border: 0 !important;
 }
 
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
-#TabsToolbar .titlebar-placeholder[type="post-tabs"]{
-  opacity: 0 !important;
+/* Fx66+ tab close fix */
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-close-button {
+  visibility: visible !important;
+  display: block !important;
+}
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-close-button {
+  visibility: hidden !important;
+  display: block !important;
+  -moz-margin-start: -18px !important;
 }
 
-#main-window[tabsintitlebar] #TabsToolbar .private-browsing-indicator,
-#main-window[tabsintitlebar] #TabsToolbar #window-controls,
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="pre-tabs"],
-#main-window[tabsintitlebar] #TabsToolbar .titlebar-spacer[type="post-tabs"] {
-  display: none !important;
+/*lw theme fix */
+#main-window:-moz-lwtheme {
+  background: var(--lwt-header-image) !important;
+  background-repeat: repeat-y !important;
 }

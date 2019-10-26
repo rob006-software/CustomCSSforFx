@@ -4,6 +4,7 @@
 
 
 /* remove search go button */
+#searchbar .search-go-button,
 .searchbar-textbox .search-go-button {
   visibility: hidden !important;
 }

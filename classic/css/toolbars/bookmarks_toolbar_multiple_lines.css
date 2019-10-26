@@ -3,7 +3,10 @@
 /****************************************************************************************/
 
 
-/* import old button/bookmark size code */
+/* NOTE  ********************************************************************************/
+/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
+
+/* import old button/bookmark size code *************************************************/
 @import "./../buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css";
 
 :root {
@@ -58,16 +61,19 @@
 }
 
 #personal-bookmarks #PlacesToolbar toolbarbutton.bookmark-item{
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  vertical-align: middle;
 }
-
+/*
 #personal-bookmarks #PlacesToolbar toolbarbutton.bookmark-item:hover:active:not([disabled="true"]),
 #personal-bookmarks #PlacesToolbar toolbarbutton.bookmark-item[open="true"] {
   padding-top: 2px !important;
   padding-bottom: 2px !important;
 }
-
+*/
 #personal-bookmarks #PlacesToolbar toolbarseparator{
   -moz-appearance: none !important;
   visibility: visible !important;

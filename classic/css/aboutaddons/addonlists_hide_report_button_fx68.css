@@ -3,9 +3,10 @@
 /****************************************************************************************/
 
 
-#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar {
-  margin-top: 24px !important;
-}
-#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar {
-  margin-top: 24px !important;
+@-moz-document  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
+	
+	panel-item[action="report"] {
+	  display: none !important;
+	}
+
 }

@@ -1,5 +1,5 @@
 **This is fork of [Aris-t2/CustomCSSforFx](https://github.com/Aris-t2/CustomCSSforFx) with enabled and adjusted multiline tabs support.**  
-**See [differences](https://github.com/Aris-t2/CustomCSSforFx/compare/master...rob006-software:master).**  
+**See [differences](https://github.com/Aris-t2/CustomCSSforFx/compare/master...rob006-software:master?w=1).**  
 **Previews: [screen 1](https://i.rob006.net/9c64d7e2.png), [screen 2](https://i.rob006.net/8c5a49e3.png).**
 
 

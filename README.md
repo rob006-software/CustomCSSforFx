@@ -1,3 +1,8 @@
+**This is fork of [Aris-t2/CustomCSSforFx](https://github.com/Aris-t2/CustomCSSforFx) with enabled and adjusted multiline tabs support.**  
+**See [differences](https://github.com/Aris-t2/CustomCSSforFx/compare/master...rob006-software:master).**  
+**Previews: [screen 1](https://i.rob006.net/9c64d7e2.png), [screen 2](https://i.rob006.net/8c5a49e3.png).**
+
+
 ## Downloads for Firefox Quantum (60+)
 
 **[CustomCSSforFx releases & changelog](https://github.com/Aris-t2/CustomCSSforFx/releases)** --- **[Custom JavaScript for Firefox](https://github.com/Aris-t2/CustomJSforFx)** --- **[NoiaButtons CSS tweaks](https://github.com/Aris-t2/NoiaButtons)**  

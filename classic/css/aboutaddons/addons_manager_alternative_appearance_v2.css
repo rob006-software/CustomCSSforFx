@@ -318,9 +318,9 @@
 
 	.list > .addon,
 	.list > .addon:hover {
-	  outset: unset !important;
+	  /*outset: unset !important;*/
 	  box-shadow: unset !important;
-	  duration: unset !important;
+	  /*duration: unset !important;*/
 	  padding-top: 10px !important;
 	  padding-bottom: 10px !important;
 	  margin-top: 4px !important;
@@ -332,9 +332,9 @@
 	}
 
 	#detail-view .card {
-	  outset: unset !important;
+	  /*outset: unset !important;*/
 	  box-shadow: unset !important;
-	  duration: unset !important;
+	  /*duration: unset !important;*/
 	}
 	
 	#detail-view .detail-view-container {
@@ -382,4 +382,19 @@ html[data-reactid][data-reactroot] head[data-reactid] + body[data-reactid]{
 	  margin: 1px 0  !important;
 	}
 
+}
+
+@-moz-document  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
+	.main-heading,
+	.main-search {
+	  background: unset !important;
+	  max-width: unset !important;
+	  padding-inline-start: unset !important;
+	  padding-top: unset !important;
+	  padding-bottom: unset !important;
+	}
+	.sticky-container {
+	  background: -moz-Dialog !important;
+	  z-index: 1000 !important;
+	}
 }

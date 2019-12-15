@@ -2,8 +2,6 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-/*@import "./addons_manager_alternative_appearance.css";*/
-
 
 @-moz-document  url-prefix(chrome://mozapps/content/extensions/extensions.xul),
 				url-prefix(about:addons) {
@@ -169,7 +167,7 @@
 	}
 
 	#nav-header {
-	  min-height: unset !important;;
+	  min-height: unset !important;
 	}
 	
 	#header-utils-btn {
@@ -252,9 +250,9 @@
 
 	.list > .addon,
 	.list > .addon:hover {
-	  outset: unset !important;
+	  /*outset: unset !important;*/
 	  box-shadow: unset !important;
-	  duration: unset !important;
+	  /*duration: unset !important;*/
 	  border-bottom: 1px solid var(--in-content-box-border-color) !important;
 	}
 
@@ -263,9 +261,9 @@
 	}
 	
 	#detail-view .card {
-	  outset: unset !important;
+	  /*outset: unset !important;*/
 	  box-shadow: unset !important;
-	  duration: unset !important;
+	  /*duration: unset !important;*/
 	}
 
 	#detail-view .detail-view-container {
@@ -321,9 +319,10 @@
 	  border: 0 !important;
 	  border-radius: 0 !important;
 	}
-
+	
 	addon-card:not([expanded="true"]) .addon.card:hover {
 	  background: Highlight !important;
+	  box-shadow: unset !important;
 	}
 
 	addon-card:not([expanded="true"]) .addon.card:hover .card-contents :-moz-any(div,span,.addon-name-link) {
@@ -336,18 +335,19 @@
 	}
 
 	/* reduce opacity for disabled add-ons */
-	section[section="1"] {
-	  color: grey !important;
-	  opacity: 0.6 !important;
-	  filter: greyscale !important; 
-	}
-	
-	/* workaround for Fx 70+ to not have reduced opacity twice */
+	section[section="1"] addon-card:not([expanded]) > .addon.card:not([active="false"]), /* workaround for Fx 68-69*/
 	addon-card:not([expanded]) > .addon.card[active="false"],
 	addon-card:not([expanded])[panelopen] > .addon.card[active="false"],
 	addon-card:not([expanded]) > .addon.card[active="false"]:focus-within,
 	addon-card:not([expanded]) > .addon.card[active="false"]:hover {
-	  opacity: 1 !important;
+	  color: grey !important;
+	  opacity: 0.6 !important;
+	  transition: unset !important;
+	}
+	
+	section[section="1"] addon-card:not([expanded]) > .addon.card[active="true"] { /* workaround for Fx 70+*/
+	  color: inherit !important;
+	  opacity: 1.0 !important;
 	  transition: unset !important;
 	}
 
@@ -355,6 +355,10 @@
 	recommended-themes-section,
 	recommended-extensions-section {
 	  display: none !important;
+	}
+	
+	addon-list message-bar-stack.pending-uninstall {
+	  margin-bottom: 0px !important;
 	}
 
 }
@@ -364,4 +368,58 @@
 	#addons-page .main-content{
 	  -moz-margin-start: -1px !important;
 	}
+	
+}
+
+@-moz-document  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
+	.main-heading,
+	.main-search {
+	  background: unset !important;
+	  max-width: unset !important;
+	  padding-inline-start: unset !important;
+	  padding-top: unset !important;
+	  padding-bottom: unset !important;
+	  margin-inline-start: 0px !important;
+	}
+	.sticky-container {
+	  background: #f9f9fa !important;
+	  z-index: 1000 !important;
+	}
+	
+	.main-heading {
+	  margin-top: -30px !important;
+	}
+	
+	.main-heading .header-name,
+	.main-heading .spacer,
+	.main-search .search-label	{
+	  display: none !important;
+	}
+	
+	.main-search search-textbox {
+	  min-height: unset !important;
+	  width: unset !important;
+	  font-size: 12px !important;
+	}
+	
+	.page-options-menu > .more-options-button {
+	  margin: 2px !important;
+	  width: 48px !important;
+	  height: 24px !important;
+	}
+	
+	addon-page-options panel-list {
+	  z-index: 1000 !important;
+	}
+	
+	.main-heading .page-options-menu {
+	  order: -1;
+	}
+	
+	button[data-l10n-id="addon-updates-manual-updates-found"] {
+	  min-height: 0 !important;
+	  padding: 0 !important;
+	}
+	
+	
 }

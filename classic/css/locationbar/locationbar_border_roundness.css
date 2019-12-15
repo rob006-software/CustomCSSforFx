@@ -3,7 +3,9 @@
 /****************************************************************************************/
 
 
-#urlbar, #searchbar, .searchbar-textbox {
+#urlbar.megabar:not([open]) #urlbar-background,
+#urlbar,#urlbar-input-container,
+#searchbar, .searchbar-textbox {
   border-radius: 20px !important;
 }
 

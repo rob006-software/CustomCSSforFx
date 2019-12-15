@@ -4,33 +4,78 @@
 
 @-moz-document url-prefix(about:config) {
 
-	.config-background #prefs,
-	.config-background #prefs * {
-	  min-height: unset !important;
-	  padding: unset !important;
-	  margin: unset !important;
-	  font-size: unset !important;
+	* {
+	  font-size: 9pt !important;
 	}
 
-	.config-background #prefs button {
+	#prefs,
+	#prefs * {
+	  min-height: unset !important;
+	  padding-left: unset !important;
+	  padding-right: unset !important;
+	  margin: unset !important;
+	}
+	
+	#prefs > tr,
+	#prefs > tr > td,
+	#prefs > tr > th {
+	  min-height: unset !important;
+	  height: unset !important;
+	  padding-left: unset !important;
+	  padding-right: unset !important;
+	  margin: unset !important;
+	}
+	
+	#prefs {
+	  width: 100% !important;
+	  border-radius: 0 !important;
+	}
+	
+	#prefs button {
+	  min-height: 16px !important;
+	  height: unset !important;
+	  min-width: 16px !important;
+	  width: unset !important;
+	  padding: unset !important;
+	  margin: unset !important;
+	}
+
+	#prefs button {
 	  -moz-margin-start: 1px !important;
 	}
 
-	.config-background #prefs #form-edit > * {
+	#prefs #form-edit > * {
 	  -moz-margin-end: 2px !important;
 	}
+	
+	input[type="radio"] {
+	  transform: scale(0.8) !important;
+	}
 
-	.config-background #search-container * {
+	#search-container * {
 	  min-height: unset !important;
-	  font-size: unset !important;
 	  padding-top: unset !important;
 	  padding-bottom: unset !important;
 	  margin-top: unset !important;
 	  margin-bottom: unset !important;
 	}
 
-	.config-background #search-container {
-	  padding: 4px !important;
+	#search-container {
+	  padding: 0 !important;
+	}
+	
+	#search-container, #about-config-search:focus,
+	#search-container, #about-config-search[focused] {
+	  box-shadow: unset !important;
+	}
+
+	#search-container, #about-config-search:-moz-ui-invalid:focus {
+	  box-shadow: unset !important;
+	}
+	
+	.cell-edit,
+	.cell-reset {
+	  width: 20px !important;
 	}
 
 }

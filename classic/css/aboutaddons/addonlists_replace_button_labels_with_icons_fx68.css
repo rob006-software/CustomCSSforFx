@@ -5,7 +5,8 @@
 
 @-moz-document  url-prefix(chrome://mozapps/content/extensions/aboutaddons.html) {
 	
-	.more-options-menu panel-list {
+	.more-options-menu panel-list,
+	addon-list .more-options-menu addon-options panel-list	{
 	  right: 30px !important;
 	}
 

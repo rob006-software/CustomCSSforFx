@@ -3,12 +3,12 @@
 /****************************************************************************************/
 
 
-#main-window[tabsintitlebar] #nav-bar #PanelUI-button {
-  position: relative !important;
-  margin-top: -32px !important;
-  margin-bottom: 40px !important;
+/* compact results */
+.megabar .urlbarView-row {
+  padding-block: 0px !important;
 }
 
-#main-window[tabsintitlebar] #nav-bar-customization-target {
-  -moz-margin-start: -37px !important;
+.megabar .urlbarView.megabar {
+  margin-inline: unset !important;
+  width: 100% !important;
 }

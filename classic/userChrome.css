@@ -16,7 +16,7 @@
 [!] FIREFOX 64+ (look for '_fx64')
   - 'classic/old autocomplete popup with two-lined results' uses an own new option
   - 'classic/old autocomplete popup with url only results' uses an own new option
-
+  
 [!] Firefox 65+ (look for '_fx65')
   - 'tabs not on top' mode uses an own new option
   - 'tabs not on top' mode uses another new option, if combined with 'multiple tab lines' option
@@ -25,12 +25,12 @@
   - 'additional bookmarks toolbar' uses an own new option
   - 'simulated add-on bar > additional bookmarks toolbar' uses an own new option
   - 'appbutton in titlebar' on macOS gets moved to the right (see extra option)
-
+  
 [!] Firefox 66+ (look for '_fx66')
   - 'multiple tab lines v1 & v2' are not compatible with Firefox 66+
   - 'bookmarks toolbar multiple lines' uses an own new option
   - 'searchbar show labels' uses an own new option
-
+  
 [!] Firefox 68+ (look for '_fx68')
   - 'autocomplete popup > url and title 50% width each' code changed
   - 'autocomplete popup > title and url 50% width each' code changed
@@ -46,7 +46,7 @@
   - 'autocomplete popup > keyword bold/underline' not supported anymore
   - 'tabs not on top' > code changed
   - 'tabs below main content' > code changed
-
+  
 [!] Firefox 69+
   - 'about:config > toolkit.legacyUserProfileCustomizations.stylesheets > true' (or custom styles will not be loaded)
 
@@ -56,8 +56,8 @@
  - 'identitybox colors' option cheats tracking protection button into identity box
  - 'searchbar popup > show engine labels' uses an own new option
  - 'searchbar popup > show engine labels + show scrollbar' uses an own new option
-- 'classic appearance for bookmarks menu button' is not working anymore (use button_popup_panel_mozdialog.css + button_popup_panel_compact.css)
-
+ - 'classic appearance for bookmarks menu button' is not working anymore (use button_popup_panel_mozdialog.css + button_popup_panel_compact.css)
+ 
  [!] Firefox 71+ (look for '_fx71')
  - added support for 'about:config > layout.css.xul-box-display-values.survive-blockification.enabled > false'
  - 'appbutton in titlebar' requires workaround depending on configuration
@@ -66,12 +66,12 @@
  [!] Firefox 72+ (look for '_fx72')
  - 'searchbar popup > show engine labels' uses an own new option
  - 'searchbar popup > show engine labels + show scrollbar' uses an own new option
-
-
+ 
+ 
  ------------------------------------------------------------------------------------------------------------------
  [!] For 'Location Bar' settings to work in Firefox 71+ set 'about:config > browser.urlbar.megabar' to 'false'. [!]
  ------------------------------------------------------------------------------------------------------------------
-[!] It is not possible to modify individual menupopups anymore, because their code got moved into general html [!]
+ [!] It is not possible to modify individual menupopups anymore, because their code got moved into general html [!]
  [!] '#shadow-root' sub areas not customizable by CSS without modifying all other menu popups too.              [!]
  ------------------------------------------------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@
 /*************************************************************************************************
 
   README
-
+  
   Finding profile folder: address bar > about:support > Profile Folder > Open Folder
   CSS files and sub-folders belong into \PROFILEFOLDER\chrome\ directory.
   \chrome\config\
@@ -105,11 +105,11 @@
   Some CSS tweaks won't work, if '@namespace' references are used inside '.css' files!
 
   EXPERIMENTAL settings are for testing only!
-
+  
   GENERAL SUPPORT / DISCUSSION THREAD: github.com/Aris-t2/CustomCSSforFx/issues/211
 
   All options have significant categories and names.
-
+  
   BASIC OVERVIEW - settings this file contains:
   CONFIGURATION FILES
   - general variables / color variables (default browser theme only)
@@ -308,7 +308,7 @@
 /* @import "./css/appbutton/appbutton_popup_sync_hidden.css"; /**/
 /* @import "./css/appbutton/appbutton_popup_logins_and_passwords_hidden.css"; /**/
 /* @import "./css/appbutton/appbutton_popup_trackingprotection_hidden.css"; /**/
-/* @import "./css/appbutton/appbutton_popup_panelarrow_hidden.css"; /**/
+/* @import "./css/appbutton/appbutton_popup_panelarrow_hidden.css"; /**/ 
 
 /************************************************************************************************/
 /* button on navigation toolbar *****************************************************************/
@@ -643,7 +643,7 @@
 /* @import "./css/toolbars/addonbar_fullscreen_autohide.css"; /**/  /* <--- EXPERIMENTAL */
 /* [!] Fx 65+ create additional toolbar for 'bookmarks toolbar items' on navigation toolbar *****/
 /* @import "./css/toolbars/addonbar_extra_bookmarks_toolbar_below_navbar_fx65.css"; /**/  /* <--- EXPERIMENTAL */
-
+ 
 /* GENERAL TOOLBAR SETTINGS *********************************************************************/
 /* @import "./css/toolbars/toolbars_old_padding.css"; /**/
 /* @import "./css/toolbars/tabs_toolbar_adjustments.css"; /**/
@@ -810,7 +810,7 @@
 /* @import "./css/locationbar/ac_popup_megabar_title_and_url_50percent_width.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_url_and_title_50percent_width.css"; /**/
 /* @import "./css/locationbar/ac_popup_megabar_title_and_url_two_lines.css"; /**/ /* for tile+url only, not for visit, search etc. */
-/* @import "./css/locationbar/ac_popup_megabar_url_only.css"; /**/
+/* @import "./css/locationbar/ac_popup_megabar_url_only.css"; /**/ 
 
 /* result menuitem settings/appearance **********************************************************/
 /* @import "./css/locationbar/ac_popup_megabar_compact_results.css"; /**/

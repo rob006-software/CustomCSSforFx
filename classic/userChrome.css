@@ -453,9 +453,9 @@
 /* [!] only compatible with 'tabs below navigation toolbar Fx 65 v2' option on Firefox 65+ ******/
 /* @import "./css/tabs/tabs_multiple_lines.css"; /**/ /* Fx 60-65 */
 /* @import "./css/tabs/tabs_multiple_lines_v2.css"; /**/  /* Fx 60-65 */
-@import "./css/tabs/tabs_multiple_lines_fx66.css"; /**/  /* Fx 66-70 */
+/* @import "./css/tabs/tabs_multiple_lines_fx66.css"; /**/  /* Fx 66-70 */
 /* @import "./css/tabs/tabs_multiple_lines_fx66_force_newtab_button_visibility.css"; /**/  /* Fx 66-70 */
-/* @import "./css/tabs/tabs_multiple_lines_fx71.css"; /**/  /* Fx 71+ */
+@import "./css/tabs/tabs_multiple_lines_fx71.css"; /**/  /* Fx 71+ */
 /* @import "./css/tabs/tabs_multiple_lines_fx71_force_newtab_button_visibility.css"; /**/  /* Fx 71+ */
 
 /* TAB TITLE IN FIREFOX TITLEBAR (Windows only) *************************************************/

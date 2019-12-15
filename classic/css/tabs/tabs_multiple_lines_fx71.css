@@ -14,9 +14,9 @@
 /* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
 
 :root{
-  --tabs-lines: 3;
-  --tab_min_width_mlt: 80px;
-  --tab_max_width_mlt: 200px;
+  --tabs-lines: 10;
+  --tab_min_width_mlt: 149px;
+  --tab_max_width_mlt: 149px;
   --tab-min-height_mlt: var(--tab-min-height,32px); /* set own value here, if used without configuration files */
 }
 
@@ -53,7 +53,7 @@
   #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
     overflow: -moz-hidden-unscrollable;
     display: block;
-	/*margin-bottom:-1px !important;*/
+	margin-bottom: -1px !important;
   }
   
   :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
@@ -98,7 +98,7 @@
 
 #tabbrowser-tabs .scrollbutton-up,
 #tabbrowser-tabs .scrollbutton-down,
-#alltabs-button,
+/*#alltabs-button,*/
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-tabs spacer,
 .tabbrowser-tab::after{

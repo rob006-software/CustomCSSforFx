@@ -2,5 +2,9 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-@import "appbutton_in_titlebar_icon_only_dark.css";
-@import "appbutton_in_titlebar_label_and_icon_base.css";
+
+#nav-bar:-moz-lwtheme-darktext #urlbar ::-moz-selection,
+#nav-bar:not(:-moz-lwtheme) #urlbar ::-moz-selection {
+  background-color: Highlight !important;
+  color: HighlightText !important;
+}

@@ -2,5 +2,7 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-@import "appbutton_in_titlebar_icon_only_grey.css";
-@import "appbutton_in_titlebar_label_and_icon_base.css";
+
+#urlbar[focused="true"]:not([usertyping="true"]) .urlbarView {
+  display: none !important;
+}

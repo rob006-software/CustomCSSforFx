@@ -20,3 +20,8 @@
 #main-window:not([chromehidden*="toolbar"]) #navigator-toolbox > #PersonalToolbar:-moz-locale-dir(rtl) menupopup {
   text-align: right !important;
 }
+
+
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox > #PersonalToolbar {
+  justify-content: flex-end !important;
+}

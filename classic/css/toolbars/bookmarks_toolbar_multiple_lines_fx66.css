@@ -10,7 +10,7 @@
 @import "./../buttons/buttons_on_bookmarks_toolbar_old_size_and_appearance.css";
 
 :root {
-  --bookmark_items_height: 26px; /* <- bookmark items - line height */
+  --bookmark_items_height: 22px; /* <- bookmark items - line height */
   --bookmark_items_lines: 3; /* <- maximum amount of lines */
 }
 

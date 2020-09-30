@@ -21,14 +21,12 @@
 	  margin-bottom: 0 !important;
 	  padding-top: 0 !important;
 	  padding-bottom: 0 !important;
-	 /* -moz-padding-start: 2px !important;*/
 	  min-height: 40px !important;
+	  padding-inline-start: 2px !important;
 	}
 	
 	addon-card panel-list {
-	  position: absolute !important;
-	  margin-top: -44px !important;
-	  right: 46px !important;
+	  margin-top: 4px !important;
 	}
 	
 	addon-card .card-heading-icon {
@@ -41,15 +39,32 @@
 	}
 
 	body div#main div[current-view="list"] addon-list[type="theme"] addon-card button[data-l10n-id="enable-addon-button"]{
-	  margin-top: 4px !important;;
-	}
-
-	body div#main div[current-view="list"] addon-list[type="theme"] addon-card .spacer {
-	  display: none !important;
+	  margin-top: 5px !important;;
 	}
 	
-	body div#main div[current-view="list"] addon-list[type="theme"] addon-card .card-contents{
-	  height: 50px !important;
+	
+	/* small image */ 
+	addon-list[type="theme"] .card-heading-image {
+	  width: 200px !important;
+	  height: 40px !important;
+	  object-fit: unset !important;
+	}
+
+	addon-list[type="theme"] .card-heading-image {
+	  position: unset !important;
+	}
+
+	addon-list[type="theme"] addon-card > .addon.card {
+	  height: unset !important;
+	}
+
+	addon-list[type="theme"] .card-contents {
+	  margin-top: unset !important;
+	}
+
+	addon-list[type="theme"] addon-card panel-list {
+	  margin-top: 4px !important;
+	  margin-inline-end: 6px !important;
 	}
 	
 }

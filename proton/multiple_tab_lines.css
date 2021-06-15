@@ -14,7 +14,7 @@
 2. Open config area: address bar > about:config > modify/add the following values/settings:
 
    toolkit.legacyUserProfileCustomizations.stylesheets > true   ||  enables custom style sheets
-   browser.compactmode.show > true   ||  shows 'Compact mode' in customizing mode 
+   browser.compactmode.show > true   ||  shows 'Compact mode' in customizing mode
    browser.uidensity > 1   ||  enables compact mode
    browser.proton.enabled > true   ||  enables proton mode
    browser.proton.contextmenus.enabled   ||  enables proton context menus
@@ -28,9 +28,9 @@
 
 #main-window  {
   --tab-min-height: unset !important;
-  --tabs-lines: 3;
-  --tab_min_width_mlt: 100px;
-  --tab_max_width_mlt: 200px;
+  --tabs-lines: 10;
+  --tab_min_width_mlt: 149px;
+  --tab_max_width_mlt: 149px;
   --tab-min-height_mlt: 30px;
 }
 
@@ -90,6 +90,17 @@
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-arrowscrollbox > spacer,
-.tabbrowser-tab::after{ 
+.tabbrowser-tab::after{
   display: none !important;
 }
+
+/* hide close button */
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-content .tab-close-button {
+  display: none !important;
+}
+
+/*#TabsToolbar .tabbrowser-tab:hover {*/
+/*  background-color: black;*/
+/*  color: red;*/
+/*  width: 20px;*/
+/*}*/

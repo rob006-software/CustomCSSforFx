@@ -2,6 +2,11 @@
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
+::root {
+  --chevron-icon: url("chrome://browser/skin/chevron.svg");
+  --toggle-icon: url("chrome://browser/skin/toggle.svg");
+}
+
 #appMenu-open-file-button {
   -moz-context-properties: fill;
   list-style-image: url("chrome://browser/skin/open.svg");
@@ -14,7 +19,7 @@
 
 #appMenu-more-button {
   -moz-context-properties: fill;
-  list-style-image: url("chrome://browser/skin/chevron.svg");
+  list-style-image: var(--chevron-icon,url("chrome://global/skin/icons/chevron.svg"));
 }
 
 #appMenu-developer-button  {
@@ -26,7 +31,8 @@
   padding-inline-start: 8px !important;
 }
 
-#main-window:-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#appMenu-open-file-button,#appMenu-save-file-button,#appMenu-more-button,#appMenu-developer-button) {
+#main-window:not([lwt-popup-brighttext]):-moz-lwtheme:-moz-lwtheme-brighttext :-moz-any(#appMenu-open-file-button,#appMenu-save-file-button,#appMenu-more-button,#appMenu-developer-button),
+[lwt-popup-brighttext] :-moz-any(#appMenu-open-file-button,#appMenu-save-file-button,#appMenu-more-button,#appMenu-developer-button) {
   fill: currentColor !important;
 }
 
@@ -34,7 +40,7 @@
 
 #PanelUI-developerItems toolbarbutton[key="key_toggleToolbox"]:not([checked=true]) > image.toolbarbutton-icon {
   -moz-context-properties: fill;
-  list-style-image: url("chrome://browser/skin/toggle.svg");
+  list-style-image: var(--toggle-icon,url("chrome://global/content/aboutconfig/toggle.svg"));
 }
 
 #PanelUI-developerItems toolbarbutton[key="key_inspector"] > image.toolbarbutton-icon {
@@ -144,18 +150,21 @@
   list-style-image: url("chrome://devtools/skin/images/command-eyedropper.svg");
 }
 
-#PanelUI-developerItems toolbarbutton image.toolbarbutton-icon[label="Get More Tools"] {
+#PanelUI-developerItems toolbarbutton image.toolbarbutton-icon[label="Get More Tools"],
+#PanelUI-developerItems toolbarbutton image.toolbarbutton-icon[label="Extensions for Developers"] {
   -moz-context-properties: fill;
   list-style-image: url("chrome://browser/skin/developer.svg");
 }
 
 #PanelUI-developerItems toolbarbutton > label.toolbarbutton-text[value="Eyedropper"],
-#PanelUI-developerItems toolbarbutton > label.toolbarbutton-text[value="Get More Tools"] {
+#PanelUI-developerItems toolbarbutton > label.toolbarbutton-text[value="Get More Tools"],
+#PanelUI-developerItems toolbarbutton > label.toolbarbutton-text[value="Extensions for Developers"] {
 	padding-inline-start: 8px !important;
 }
 
 #main-window:-moz-lwtheme:-moz-lwtheme-brighttext #PanelUI-developerItems toolbarbutton > image.toolbarbutton-icon[label="Eyedropper"],
-#main-window:-moz-lwtheme:-moz-lwtheme-brighttext #PanelUI-developerItems toolbarbutton > image.toolbarbutton-icon[label="Get More Tools"] {
+#main-window:-moz-lwtheme:-moz-lwtheme-brighttext #PanelUI-developerItems toolbarbutton > image.toolbarbutton-icon[label="Get More Tools"],
+#main-window:-moz-lwtheme:-moz-lwtheme-brighttext #PanelUI-developerItems toolbarbutton > image.toolbarbutton-icon[label="Extensions for Developers"] {
 	fill: currentColor !important;
 }
 

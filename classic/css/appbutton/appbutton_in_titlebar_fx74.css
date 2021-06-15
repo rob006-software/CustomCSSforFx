@@ -65,6 +65,13 @@
   padding-right: 0px !important;
 }
 
+
+@media (-moz-proton) {
+#main-window[tabsintitlebar] #PanelUI-button {
+  margin-inline-start: 0px !important;
+}
+}
+
 #main-window[tabsintitlebar][sizemode="maximized"] #PanelUI-button {
   -moz-margin-start: 0px !important;
 }
@@ -368,4 +375,9 @@
 #main-window[tabsintitlebar][uidensity=touch] #PanelUI-menu-button .toolbarbutton-icon {
   width: unset !important;
   height: unset !important;
+}
+
+
+#TabsToolbar .titlebar-spacer[type="pre-tabs"] {
+  display: none !important;
 }

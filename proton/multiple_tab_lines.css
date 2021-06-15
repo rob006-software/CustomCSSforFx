@@ -95,12 +95,12 @@
 }
 
 /* hide close button */
-#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-content .tab-close-button {
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-content .tab-close-button,
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-content  .tab-close-button {
   display: none !important;
 }
 
-/*#TabsToolbar .tabbrowser-tab:hover {*/
-/*  background-color: black;*/
-/*  color: red;*/
-/*  width: 20px;*/
-/*}*/
+/* remove margin after pinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
+}

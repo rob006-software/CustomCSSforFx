@@ -1,6 +1,7 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userContent.css tweaks *******************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
+
 
 @-moz-document url-prefix(about:config) {
 
@@ -41,11 +42,11 @@
 	}
 
 	#prefs button {
-	  -moz-margin-start: 1px !important;
+	  margin-inline-start: 1px !important;
 	}
 
 	#prefs #form-edit > * {
-	  -moz-margin-end: 2px !important;
+	  margin-inline-end: 2px !important;
 	}
 	
 	input[type="radio"] {
@@ -76,6 +77,11 @@
 	.cell-edit,
 	.cell-reset {
 	  width: 20px !important;
+	}
+	
+	#about-config-search {
+	  padding-top: 0 !important;
+	  padding-bottom: 0 !important;
 	}
 
 }

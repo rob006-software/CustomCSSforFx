@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -26,5 +26,3 @@
   min-width: var(--tab_min_width) !important;
   overflow: hidden !important;
 }
-
-/**/

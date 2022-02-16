@@ -1,6 +1,7 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userContent.css tweaks *******************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
+
 
 @-moz-document url(about:preferences),url-prefix(about:preferences){
 
@@ -8,21 +9,37 @@
 	  margin-inline-start: 0px !important;
 	  padding-inline-end: 0px !important;
 	}
+	
+	@media not (-moz-toolbar-prefers-color-scheme: dark), not (prefers-color-scheme: dark) {
 
- 	/*#preferences-stack,.sticky-container,
-	page,
-	.dialogBox .groupbox-title {
-	  background: -moz-Dialog !important;
-	}*/
+		#preferences-stack,.sticky-container,
+		page,
+		.dialogBox .groupbox-title {
+		  background: -moz-Dialog !important;
+		}
 
-	/*#categories {
-	  background: transparent !important;
-	}*/
+		#categories {
+		  background: transparent !important;
+		}
 
-	/*.groupbox-body,
-	#dialogFrame{
-	  background-color: white !important;
-	}*/
+		.groupbox-body,
+		#dialogFrame{
+		  background-color: white !important;
+		}
+		
+		#policies-container {
+		  background: transparent !important;
+		}
+		
+		#categories .category:not([selected]):not(:hover){
+		  color: black !important;
+		}
+		
+		.main-content {
+		  background-color: white !important;
+		}
+
+	}
 	
 	.main-content {
 	  padding: 0px !important;
@@ -41,6 +58,12 @@
 	  padding-inline: 0px !important;
 	  min-height: unset !important;
 	  height: unset !important;
+	  /*margin-top: -20px !important;*/
+	  background: unset !important;
+	}
+	
+	.sticky-inner-container {
+	  max-width: unset !important;
 	}
 	
 	#policies-container, #searchInput {
@@ -48,26 +71,12 @@
 	  margin: 0 5px 5px 5px!important;
 	}
 
-	/*#policies-container {
-	  background: transparent !important;
-	}*/
-	
 	#searchInput[focused] {
 	  box-shadow: unset !important;
 	}
 	
-	.sticky-container,
-	.search-container {
-	  /*background: transparent !important;
-	  position: absolute !important;
-	  display:block !important;
-	  top: 20px !important;*/
-	  /*margin-top: -20px !important;
-	  margin-inline-start: 0px !important;
-	  padding-inline-end: 0px !important;
-	  min-width: unset !important;
-	  width: unset !important;
-	  max-width: unset !important;*/
+	.sticky-container {
+	  position: fixed !important;
 	}
 	
 	.header-name {
@@ -79,6 +88,8 @@
 	}
 	
 	/* main colors category items */
+	
+	#categories > .category[selected]:not(:hover),
 	#categories .category[selected]{
 	  background-color: white !important;
 	  color: black !important;
@@ -89,13 +100,11 @@
 	  color: HighlightText !important;
 	}
 
-	/*#categories .category:not([selected]):not(:hover){
-	  color: black !important;
-	}*/
+
 	#categories .category {
 	  transition-duration: unset !important;
 	}
-	
+
 	/* category icons */
 	#category-search .category-icon {
 	  list-style-image: url("./../../image/prefs_search.png") !important;
@@ -125,10 +134,9 @@
 	/* alignment and text/font appearance */
 
 	#mainPrefPane {
-	  /*color: black !important;*/
-	  -moz-padding-start: 30px !important;
+	  padding-inline-start: 30px !important;
 	  margin-top: 4px !important;
-	  -moz-margin-start: -20px !important;
+	  margin-inline-start: -20px !important;
 	}
 	
 	textbox {
@@ -139,8 +147,7 @@
 	.main-content {
 	  margin-top: 20px !important;
 	  margin-bottom: 20px !important;
-	  /*background-color: white !important;*/
-	  -moz-margin-start: -1px !important;
+	  margin-inline-start: -1px !important;
 	}
 
 	.header label {
@@ -179,7 +186,6 @@
 	menulist{
 	  min-height: unset !important;
 	  height: unset !important;
-	  /*background-image: linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.20),rgba(0,0,0,0.01)) !important;*/
 	}
 	
 	button:not(.button-link):not(.close-icon):not(#contentBlockingToggle) {
@@ -197,16 +203,12 @@
 	  margin: 0 1px !important;
 	}
 	
-	/*checkbox label,
-	radio label {
-	  -moz-margin-start: -10px !important;
-	}*/
 	
 	#homeContentsGroup checkbox label {
-	  -moz-margin-start: 2px !important;
+	  margin-inline-start: 2px !important;
 	}
 	
-	radio *{
+	radio * {
 	  outline: unset !important;
 	}
 	
@@ -229,9 +231,25 @@
 	  margin-inline-start: 0 !important;
 	}
 	
-#backContainersButton .button-box {
-	padding-block-end: 20px !important
-}
+	#backContainersButton .button-box {
+	  padding-block-end: 20px !important
+	}
+	
+	.sidebar-footer-list {
+	  margin-inline: 0 !important;
+	}
+	
+	#addonsButton {
+	  fill: #63c54f !important;
+	}
+	
+	#helpButton {
+	  fill: #ff0000 !important;
+	}
+	
+	.sidebar-footer-icon {
+	  fill: unset !important;
+	}
 	
 }
 
@@ -241,7 +259,6 @@
 *[subdialog="true"] menulist{
   min-height: unset !important;
   height: unset !important;
-  /*background-image: linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(255,255,255,0.20),rgba(0,0,0,0.01)) !important;*/
 }
 
 *[subdialog="true"] button:not(.button-link):not(.close-icon){
@@ -258,24 +275,23 @@
   margin: 0 !important;
 }
 
-/**[subdialog="true"] checkbox label,
-*[subdialog="true"] radio label {
-  -moz-margin-start: -10px !important;
-}*/
-
 *[subdialog="true"] radio *{
   outline: unset !important;
 }
 
-*[subdialog="true"] > vbox,
-*[subdialog="true"] > hbox,
-*[subdialog="true"] .prefWindow-dlgbuttons,
-*[subdialog="true"] prefpane,
-*[subdialog="true"] .contentPane,
-*[subdialog="true"] .dialog-content-box,
-*[subdialog="true"] .largeDialogContainer{
-  background-color: white !important;
-  color: black !important;
+@media (-moz-toolbar-prefers-color-scheme: dark), (prefers-color-scheme: dark) {
+
+	*[subdialog="true"] > vbox,
+	*[subdialog="true"] > hbox,
+	*[subdialog="true"] .prefWindow-dlgbuttons,
+	*[subdialog="true"] prefpane,
+	*[subdialog="true"] .contentPane,
+	*[subdialog="true"] .dialog-content-box,
+	*[subdialog="true"] .largeDialogContainer{
+	  background-color: white !important;
+	  color: black !important;
+	}
+
 }
 
 *[subdialog="true"] textbox {

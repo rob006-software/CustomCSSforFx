@@ -1,4 +1,4 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
@@ -24,7 +24,7 @@
   background: none !important;
 }
 
-@media (-moz-os-version:windows-win8),(-moz-os-version:windows-win10) {
+@media (-moz-platform: windows-win8),(-moz-platform: windows-win10),(-moz-os-version:windows-win8),(-moz-os-version:windows-win10) {
   #main-window[tabsintitlebar] #titlebar-min .toolbarbutton-icon,
   #main-window[tabsintitlebar] #titlebar-max .toolbarbutton-icon,
   #main-window[tabsintitlebar] #titlebar-close:not(:hover) .toolbarbutton-icon {
@@ -39,14 +39,14 @@
   box-shadow: unset !important;
 }
 
-#main-window:not(:-moz-lwtheme) #main-menubar > menu:not(:-moz-any(:hover,[open],[_moz-menuactive])) > :-moz-any(label,description) {
+#main-window:not(:-moz-lwtheme) #main-menubar > menu:not(:is(:hover,[open],[_moz-menuactive])) > :is(label,description) {
   color: var(--colored_menubar_text_color) !important;
 }
-#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #main-menubar > menu:not(:-moz-any(:hover,[open],[_moz-menuactive])) > :-moz-any(label,description) {
+#main-window:not([style*='--lwt-header-image']):-moz-lwtheme:-moz-lwtheme-brighttext #main-menubar > menu:not(:is(:hover,[open],[_moz-menuactive])) > :is(label,description) {
   color: white !important;
 }
 
-#main-window:not(:-moz-lwtheme) #main-menubar > menu:-moz-any(:hover,[open],[_moz-menuactive]) {
+#main-window:not(:-moz-lwtheme) #main-menubar > menu:is(:hover,[open],[_moz-menuactive]) {
   background: Highlight !important;
   color: HighlightText !important;
 }
@@ -57,7 +57,7 @@
   text-shadow: unset !important;
 }
 
-@media (-moz-os-version: windows-win7) {
+@media (-moz-platform: windows-win7),(-moz-os-version: windows-win7) {
   @media all and (-moz-windows-compositor) {
 	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar .titlebar-buttonbox-container {
 	  visibility: visible !important;

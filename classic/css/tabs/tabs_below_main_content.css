@@ -1,128 +1,101 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
 @import "./tabs_below_navigation_toolbar.css";
 
-:root {
-  --space_below_content: 33px;
+/* [!] NOT A STANDALONE FILE! */
+/* [!] This code does not achieve the requested result without above files content! */
+
+
+:root{
+  --tab_below_main_content_bottom_margin: calc(4px + var(--tab-min-height));
+  --tab_below_main_content_toolbar_height: calc(3px + var(--tab-min-height));
+  --tab_below_main_content_top_margin: -3px;
 }
 
-:root[uidensity=compact]  {
-  --space_below_content: 29px;
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox {
+  padding-bottom: 1px !important;
 }
 
-:root[uidensity=touch] {
-  --space_below_content: 41px;
+#main-window:not([inDOMFullscreen="true"]) #TabsToolbar {
+  position: fixed !important;
+  display: block !important;
 }
 
-/* this is an experiment not meant for every day use */
-/* values might need adjustment for different toolbar content */
+#main-window:not([chromehidden*="toolbar"]) #navigator-toolbox {
+  padding-bottom: 0px !important;
+  border-bottom: 1px solid threedshadow !important;
+}
 
-#main-window:not([inDOMFullscreen="true"])  #browser-bottombox {
-  margin-bottom: var(--space_below_content) !important;
+#main-window:not([inDOMFullscreen="true"]) #browser-bottombox {
+  margin-bottom: var(--tab_below_main_content_bottom_margin) !important;
 }
 
 #TabsToolbar {
-  position: fixed !important;
-  display:block !important;
-  bottom: 0px !important;
-  width: 100% !important;
+  min-height: 0 !important;
+  height: var(--tab_below_main_content_toolbar_height) !important;
+  max-height: unset !important;
+  border-top: 1px solid ThreeDShadow !important;
 }
 
-#TabsToolbar #tabbrowser-tabs:not([overflow="true"]) {
-  width: 90% !important;
-}
-#TabsToolbar #tabbrowser-tabs[overflow="true"] {
-  width: 90% !important;
+#main-window:not([inDOMFullscreen="true"]) #TabsToolbar-customization-target {
+  margin-top: var(--tab_below_main_content_top_margin) !important;
 }
 
-#main-window:not([customizing]) #TabsToolbar[currentset*="tabbrowser-tabs,new-tab-button,alltabs-button"] #tabbrowser-tabs:not([overflow="true"]){
-  width: calc(100% - 0px) !important;
-}
-
-#main-window:not([customizing]) #TabsToolbar[currentset*="tabbrowser-tabs,new-tab-button"] #tabbrowser-tabs[overflow="true"] {
-  width: calc(100% - 20px) !important;
-}
-
-#main-window:not([customizing]) #TabsToolbar[currentset*="tabbrowser-tabs,new-tab-button,alltabs-button"] #tabbrowser-tabs[overflow="true"] {
-  width: calc(100% - 40px) !important;
-}
-
-#main-window #navigator-toolbox #TabsToolbar > toolbarpaletteitem,
-#main-window #navigator-toolbox #TabsToolbar > .toolbarbutton-1 {
-  position: relative !important;
-  bottom: -2px !important;
-  width: unset !important;
-  height: unset !important;
-}
-
-#main-window #navigator-toolbox #TabsToolbar > .toolbarbutton-1 .toolbarbutton-icon {
-  padding: 0px !important;
-  margin: 0px !important;
-  min-width: 0px !important;
-  min-height: 0px !important;
-  width: 18px !important;
-  height: 18px !important;
-}
-
-#TabsToolbar .private-browsing-indicator,
-#TabsToolbar #window-controls,
-#TabsToolbar .titlebar-placeholder[type="caption-buttons"],
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"],
-#TabsToolbar .titlebar-placeholder[type="post-tabs"] {
-  display: none !important;
-}
-
-/* lw-theme */
-#navigator-toolbox > #TabsToolbar:-moz-lwtheme {
+/* lw-theme support */
+#main-window:not([inDOMFullscreen="true"]) #navigator-toolbox #TabsToolbar:-moz-lwtheme {
   background-repeat: no-repeat !important;
   background-position: bottom left !important;
   background-color: var(--toolbar-bgcolor) !important;
   background-image: var(--lwt-header-image) !important;
 }
 
-/* make sure toolbar buttons do not increase toolbar height */
-#TabsToolbar toolbarbutton .toolbarbutton-badge-stack,
-#TabsToolbar > toolbarpaletteitem {
-  min-height: unset !important;
-  padding: unset !important;
-  margin: 0 2px !important;
+
+/* ##### Caption buttons tweaks: min/max/restore/close ##### */
+
+/* caption button position in maximized mode after moving to the top */
+#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container,
+#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #TabsToolbar .titlebar-buttonbox-container {
+  top: 0px !important;
 }
 
-#TabsToolbar > toolbarbutton {
-  min-height: unset !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* Windows */
+@media (-moz-platform: windows-win10), (-moz-platform: windows-win8), (-moz-platform: windows-win7), (-moz-os-version:windows-win10), (-moz-os-version:windows-win8), (-moz-os-version:windows-win7) {
+	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  top: 1px !important;
+	}
+	#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  top: 8px !important;
+	}
 }
 
-#TabsToolbar > toolbarpaletteitem .toolbarbutton-icon,
-#TabsToolbar > toolbarbutton .toolbarbutton-icon {
-  min-width: 18px !important;
-  width: 18px !important;
-  min-height: 18px !important;
-  height: 18px !important;
-  padding: unset !important;
-  margin: unset !important;
+/* Windows 7/8 extra tweaks */
+@media (-moz-platform: windows-win7), (-moz-os-version: windows-win7) {
+  @media all and (-moz-windows-compositor) {
+	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  display: none !important;
+	}
+	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]):-moz-lwtheme #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  display: flex !important;
+	}
+  }
+  @media not all and (-moz-windows-compositor) {
+	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  top: -2px !important;
+	}
+	#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  top: 0px !important;
+	}
+  }
 }
 
-/* width of new tab tab */
-#TabsToolbar :-moz-any(.tabs-newtab-button,#tabs-newtab-button) {
-  min-width: 0px !important;
-  width: 28px !important;
-  margin-bottom: -1px !important;
-}
-
-/* size of new tab tabs '+' icon */
-:-moz-any(.tabs-newtab-button,#tabs-newtab-button) .toolbarbutton-icon {
-  min-width: 0px !important;
-  min-height: 0px !important;
-  width: 14px !important;
-  height: 14px !important;
-  margin: 0px !important;
-  margin-bottom: 0px !important;
-  padding: 0px !important;
-  background: unset !important;
-  box-shadow: unset !important;
+@media (-moz-platform: windows-win8),(-moz-os-version:windows-win8) {
+	#main-window[tabsintitlebar]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container	{
+	  top: -13px !important;
+	}
+	#main-window[tabsintitlebar][sizemode="maximized"]:not([inDOMFullscreen="true"]) #toolbar-menubar ~ #TabsToolbar .titlebar-buttonbox-container {
+	  top: -5px !important;
+	}
 }

@@ -1,19 +1,18 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
 
-/* Force appbutton to the right, because some idiots at Apple decided to place caption **/
-/* buttons on the windows top left! Seriously, who came up with this bullsh!t? **********/
+/* Force appbutton to the right *********************************************************/
 
 #main-window[tabsintitlebar] #PanelUI-button {
   right: 0 !important;
 }
 
 #main-window[tabsintitlebar] #TabsToolbar {
-  -moz-padding-end: 100px !important
+  padding-inline-end: 100px !important;
 }
 
-#TabsToolbar .titlebar-spacer[type="pre-tabs"] {
-  display: initial !important;
+#main-window[tabsintitlebar] .titlebar-buttonbox-container {
+  padding-inline-end: 20px !important;
 }

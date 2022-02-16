@@ -1,11 +1,12 @@
-/* Firefox Quantum userChrome.css tweaks ************************************************/
+/* Firefox userChrome.css tweaks ********************************************************/
 /* Github: https://github.com/aris-t2/customcssforfx ************************************/
 /****************************************************************************************/
 
-.tabbrowser-tab .tab-icon-image[src="chrome://mozapps/skin/extensions/extensionGeneric-16.svg"]{
+
+.tabbrowser-tab .tab-icon-image[src="chrome://mozapps/skin/extensions/extension.svg"] {
   fill: green !important;
 }
 
-.tabbrowser-tab .tab-icon-image[src="chrome://browser/skin/settings.svg"]{
-  fill: gray !important;
+.tabbrowser-tab .tab-icon-image[src="chrome://global/skin/icons/settings.svg"] {
+  fill: grey !important;
 }

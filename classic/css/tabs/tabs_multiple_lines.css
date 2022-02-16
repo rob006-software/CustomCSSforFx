@@ -15,9 +15,9 @@
 /* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
 
 :root{
-  --tabs-lines: 3;
-  --tab_min_width_mlt: 100px;
-  --tab_max_width_mlt: 200px;
+  --tabs-lines: 10;
+  --tab_min_width_mlt: 149px;
+  --tab_max_width_mlt: 149px;
   --tab-min-height_mlt: var(--tab-min-height,32px); /* set own value here, if used without configuration files */
 }
 
@@ -77,10 +77,15 @@
 #alltabs-button,
 :root:not([customizing]) #TabsToolbar #new-tab-button,
 #tabbrowser-arrowscrollbox > spacer,
-.tabbrowser-tab::after{ 
+.tabbrowser-tab::after{
   display: none !important;
 }
 
 .tab-background {
   margin-block: unset !important;
+}
+
+/* remove margin after pinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+  margin-inline-start: 0 !important;
 }

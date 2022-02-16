@@ -276,7 +276,7 @@
        'button in Firefox titlebar' options to work properly ************************************/
 
 /* button in titlebar - [only use one at a time] ************************************************/
-@import "./css/appbutton/appbutton_in_titlebar.css"; /**/ /* <-- label only */
+/* @import "./css/appbutton/appbutton_in_titlebar.css"; /**/ /* <-- label only */
 /* @import "./css/appbutton/appbutton_in_titlebar_icon_only.css"; /**/
 
 /* for 'appbutton in titlebar icon only' - [only use one at a time] *****************************/
@@ -458,7 +458,7 @@
 /* page context menu items: 'back', 'forward', 'reload', 'stop', 'bookmarks' ********************/
 /* @import "./css/generalui/context_bfrsb_icons_colorized.css"; /**/
 /* menuitem labels - [only use one at a time] ***************************************************/
-@import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
+/* @import "./css/generalui/context_bfrsb_labels_without_icons.css"; /**/
 /* @import "./css/generalui/context_bfrsb_labels_with_icons.css"; /**/
 
 /* sidebar **************************************************************************************/
@@ -540,7 +540,7 @@
 /* @import "./css/toolbars/tabs_toolbar_adjustments.css"; /**/
 /* @import "./css/toolbars/tabs_toolbar_remove_background_fog_win7.css"; /**/
 /* @import "./css/toolbars/tabs_toolbar_adjustments_macOS_fix.css"; /**/					/*  <-- macOS fix */
-@import "./css/toolbars/searchbar_on_menubar_fix.css"; /**/		/* placing searchbar on menubar requires adjustments */
+/* @import "./css/toolbars/searchbar_on_menubar_fix.css"; /**/		/* placing searchbar on menubar requires adjustments */
 
 /* edit target file to select which items to hide ***********************************************/
 /* @import "./css/toolbars/toolbar_context_menuitems_visibility.css"; /**/
@@ -642,7 +642,7 @@
 /* @import "./css/locationbar/megabar_expanding_breakout_disabled.css"; /**/
 /* @import "./css/locationbar/megabar_disable_openviewonfocus.css"; /**/
 /* @import "./css/locationbar/urlbar_border_roundness.css"; /**/
-@import "./css/locationbar/urlbar_restore_visible_border.css"; /**/
+/* @import "./css/locationbar/urlbar_restore_visible_border.css"; /**/
 
 /* megabar/location bar background color - [only use one at a time] ******************************/
 /* @import "./css/locationbar/urlbar_background_color.css"; /**/ /* default white background color */

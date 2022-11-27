@@ -8,11 +8,14 @@
 /* https://00.bulog.jp/archives/1476/ ***************************************************/
 /* https://www.reddit.com/r/FirefoxCSS/comments/7dclp7/multirow_tabs_in_ff57/ ***********/
 /* https://github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/multi-row_tabs.css */
+/* https://github.com/Endor8/userChrome.js/blob/master/Mutirowtabs/ *********************/
 /****************************************************************************************/
 
 
-/* NOTE  ********************************************************************************/
-/* Variables are set inside '.\config\' folders CSS files, if complete package is used! */
+/* NOTE
+   The below variables are overridden by the ones used in files inside ./config/ folder,
+   if this projects full package is used. Set custom color values there in that case.
+*/
 
 :root{
   --tabs-lines: 10;
@@ -23,7 +26,8 @@
 
 #tabbrowser-tabs{
   min-height: unset !important;
-  padding-inline-start: 0px !important
+  padding-inline-start: 0px !important;
+  margin-top: 1px !important;
 }
 
 @-moz-document url(chrome://browser/content/browser.xhtml){
@@ -40,6 +44,7 @@
     max-height: calc(var(--tab-min-height_mlt) * var(--tabs-lines));
     scrollbar-color: currentColor transparent;
     scrollbar-width: thin;
+	contain: none !important;
   }
 }
 
@@ -88,4 +93,8 @@
 /* remove margin after pinned tabs */
 #tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
   margin-inline-start: 0 !important;
+}
+
+box.scrollbox-clip[orient="horizontal"] {
+  display: inline !important;
 }

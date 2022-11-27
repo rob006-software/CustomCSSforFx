@@ -3,7 +3,12 @@
 /****************************************************************************************/
 
 
-/* Set a custom color value inside general_variables.css */
+/* NOTE
+   The below variables are overridden by the ones used inside 
+   ./config/general_variables.css file, if this projects full package is used.
+   Set custom values inside ./config/general_variables.css in that case.
+*/
+
 :root {
   --urlbar_background_color: white;
   --urlbar_text_color: black;
@@ -29,4 +34,12 @@
 #urlbar:-moz-lwtheme:-moz-lwtheme-darktext .urlbarView-row-inner[selected] {
   color: var(--urlbar_text_color) !important;
   fill: var(--urlbar_text_color) !important;
+}
+
+@media (-moz-content-prefers-color-scheme: light) {
+	#urlbar:-moz-lwtheme .urlbarView-row:not([type=tip], [type=dynamic])[selected] > .urlbarView-row-inner,
+	#urlbar:-moz-lwtheme .urlbarView-row-inner[selected] {
+	  color: var(--urlbar_text_color) !important;
+	  fill: var(--urlbar_text_color) !important;
+	}
 }

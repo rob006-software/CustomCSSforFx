@@ -5,23 +5,27 @@
 
 ## Downloads for Firefox
 
-**[CustomCSSforFx releases & changelog](https://github.com/Aris-t2/CustomCSSforFx/releases)** - **[Custom JavaScript for Firefox](https://github.com/Aris-t2/CustomJSforFx)** - **[NoiaButtons CSS tweaks](https://github.com/Aris-t2/NoiaButtons)** - **[List of CTR, CTB, GMF & Noia4 CSS tweaks & link to FOXSCAPEuC theme](https://github.com/Aris-t2/CustomCSSforFx/issues/2)** - **[Firefox Color (compatible with default color preset of CustomCSSforFx)](https://color.firefox.com/)**   
+- **[CustomCSSforFx - current release & changelog](https://github.com/Aris-t2/CustomCSSforFx/releases)** - **[Last version with 102 ESR support](https://github.com/Aris-t2/CustomCSSforFx/releases/tag/4.2.8)**  
+- **[Custom JavaScript scripts for Firefox](https://github.com/Aris-t2/CustomJSforFx)** - **[NoiaButtons CSS tweaks](https://github.com/Aris-t2/NoiaButtons)**  
 
 
-## Want to support this project?
+## If you want to support this project, [Paypal Me](https://www.paypal.me/tkpay).
 
-**[[ Paypal Me ]](https://www.paypal.me/tkpay)**  
+
+## License
+
+This project is dual-licensed under the GPLv3 and MPL 2.0, see the terms of the LICENSE files.  
+
 
 ## Instructions / Howto / Readme
 
-- [Unlock custom CSS usage in Firefox 69 and newer](#unlock-custom-css-usage-in-firefox-69-and-newer)
-- [WebExtensions can not modify Firefox Quantums appearance properly](#webextensions-can-not-modify-firefox-quantums-appearance-properly)  
+- [Unlock custom CSS usage](#unlock-custom-css-usage)
+- [WebExtensions can not modify Firefox appearance properly](#webextensions-can-not-modify-firefox-appearance-properly)
 - [Where to find Firefox profile folder? The correct location for user styles.](#where-to-find-firefox-profile-folder-the-correct-location-for-user-styles)  
 - [How to use custom user styles?](#how-to-use-custom-user-styles)  
 - [How to find item ids and attributes?](#how-to-find-item-ids-and-attributes)  
 - [How to modify custom user styles?](#how-to-modify-custom-user-styles)  
-- [Suggested ui tweaks](#suggested-ui-tweaks)  
-- ['about:config' tweaks](#aboutconfig-tweaks)  
+- [Firefox Color (compatible with default color preset of CustomCSSforFx)](https://color.firefox.com/)    
 
 ## Unlock custom CSS usage
 
@@ -108,11 +112,11 @@ Remove `/*` at lines end to make that part of the code active. Save the file and
 _Example 2_  
 Open `userChrome.css` file  
 Look for `@import "./css/tabs/classic_squared_tabs.css"; /**/`  
-Add `/*` at lines start to remove classic squared tabs.  
-The result will look like `/* @import "./css/tabs/classic_squared_tabs.css"; /**/`  
+Add `/*` at lines start to disable 'classic squared tabs' appearance.  
+The result should look like `/* @import "./css/tabs/classic_squared_tabs.css"; /**/`  
   
 _Example 3_  
 Open `userChrome.css` file    
 Look for `/* @import "./css/locationbar/reader_alternative_icon.css"; /**/`  
-Remove `/*` at lines start to enable this popup appearance.  
-The result will look like `/* @import "./css/locationbar/reader_alternative_icon.css"; /**` 
+Remove `/*` at lines start to enable the alternative reader icon appearance.  
+The result should look like `@import "./css/locationbar/reader_alternative_icon.css"; /**/` 

@@ -4,15 +4,15 @@
 
 
 /* NOTE
-   The below variables are overridden by the ones used inside 
+   The below variables are overridden by the ones used inside
    ./config/general_variables.css file, if this projects full package is used.
    Set custom values inside ./config/general_variables.css in that case.
 */
 
 :root {
   /* --tab-min-width: 50px; */
-  --tab_min_width: 50px;
-  --tab_max_width: 250px;
+  --tab_min_width: 149px;
+  --tab_max_width: 155px;
 }
 
 /* use 'about:config > browser.tabs.tabMinWidth' for tab min-width */
